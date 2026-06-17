@@ -15,7 +15,7 @@ public class TaskExecutionAspect {
 
   @Around("taskExecutionMethods()")
   public Object aroundTaskExecutionMethods(ProceedingJoinPoint joinPoint) throws Throwable {
-    Long start = System.currentTimeMillis();
+    long start = System.currentTimeMillis();
     Object result = joinPoint.proceed();
     System.out.println("Execution time for method " + joinPoint.getSignature().getName() + " is " + (System.currentTimeMillis() - start) + " ms");
     return result;
